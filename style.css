@@ -1,0 +1,318 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    background-color: #f5eded; /* 기획안 고유의 연한 미색 배경 */
+    color: #111;
+    width: 100vw;
+    height: 100vh;
+}
+a { text-decoration: none; color: inherit; }
+
+
+
+.intro-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5eded 0%, #e5d5d5 100%);
+}
+.intro-container {
+    text-align: center;
+}
+.intro-container h1 {
+    font-size: 2.8rem;
+    font-weight: 800; 
+    margin-bottom: 20px;
+    color: #111;
+    letter-spacing: -1px;
+}
+.intro-container p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+.start-btn {
+    display: inline-block;
+    padding: 16px 45px;
+    background-color: #222;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 30px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+.start-btn:hover { 
+    background-color: #555; 
+    transform: translateY(-2px);
+}
+
+
+
+.main-map-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.main-map-title {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 1.8rem;
+    font-weight: 700;
+    z-index: 10;
+}
+
+
+.main-axis-line {
+    position: absolute;
+    background-color: #777;
+    z-index: 1;
+}
+.main-line-x { width: 100%; height: 1px; top: 50%; left: 0; }
+.main-line-y { width: 1px; height: 100%; left: 50%; top: 0; }
+
+
+.main-axis-label {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #888888; 
+    z-index: 2;
+    padding: 10px;
+}
+.ma-top { top: 2%; left: 50%; transform: translateX(-50%); }
+.ma-bottom { bottom: 2%; left: 50%; transform: translateX(-50%); }
+.ma-left { left: 2%; top: 50%; transform: translateY(-50%); }
+.ma-right { right: 2%; top: 50%; transform: translateY(-50%); }
+
+
+.main-keyword-zone {
+    position: absolute;
+    border: 1px solid #444;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+.main-keyword-text {
+    position: relative;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #111;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    white-space: nowrap;
+    z-index: 20;
+    pointer-events: none;
+}
+.main-keyword-zone:hover { 
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+.mk-casual { width: 120px; height: 190px; left: 5%; top: 28%; }
+.mk-richfeminine { width: 110px; height: 180px; left: 21%; top: 38%; }
+.mk-orientalelegant { width: 130px; height: 200px; left: 38%; top: 40%; }
+.mk-retronatural { width: 140px; height: 220px; left: 51%; top: 13%; }
+.mk-genderressmoden { width: 120px; height: 180px; left: 56%; top: 56%; }
+.mk-formal { width: 105px; height: 170px; left: 65%; top: 58%; }
+.mk-chicmoden { width: 120px; height: 190px; left: 74%; top: 60%; }
+.mk-softformal { width: 130px; height: 180px; left: 76%; top: 23%; }
+
+
+.main-hover-img-group {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    display: none;
+    z-index: 4;
+}
+.main-keyword-zone:hover .main-hover-img-group { 
+    display: block; 
+}
+.main-hover-img-group img {
+    position: absolute;
+    height: auto;
+    object-fit: contain;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    filter: drop-shadow(4px 4px 10px rgba(0,0,0,0.25));
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+
+.mk-casual .main-hover-img-group img { width: 130px; }
+.mk-richfeminine .main-hover-img-group img,
+.mk-orientalelegant .main-hover-img-group img,
+.mk-retronatural .main-hover-img-group img,
+.mk-genderressmoden .main-hover-img-group img,
+.mk-formal .main-hover-img-group img,
+.mk-chicmoden .main-hover-img-group img,
+.mk-softformal .main-hover-img-group img { width: 100px; }
+
+
+.main-hover-img-group img.pos-1 { top: -20px; left: -25px; z-index: 5; }
+.main-hover-img-group img.pos-2 { top: -10px; right: -25px; z-index: 6; }
+.main-hover-img-group img.pos-3 { bottom: -20px; left: -15px; z-index: 7; }
+.main-hover-img-group img.pos-4 { bottom: -15px; right: -15px; z-index: 8; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+
+
+.detail-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding: 60px 80px;
+    gap: 60px;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.left-content-zone {
+    flex: 1.1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    min-width: 0;
+}
+.back-link {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.back-link:hover { color: #000; }
+
+.text-info-box h2 {
+    font-size: 3rem;
+    font-weight: 800; 
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+.text-info-box p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+    word-break: keep-all;
+    font-weight: 400; 
+}
+
+
+.lookbook-gallery {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+.lookbook-gallery img {
+    height: 300px; 
+    width: auto;
+    object-fit: contain;
+    margin-left: -55px; 
+    filter: drop-shadow(5px 5px 12px rgba(0,0,0,0.18));
+    position: relative;
+    transition: transform 0.3s ease;
+}
+.lookbook-gallery img:first-child { margin-left: 0; }
+.lookbook-gallery img:hover {
+    transform: translateY(-8px) scale(1.02);
+    z-index: 99;
+}
+
+
+.right-map-zone {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+.mini-map-board {
+    position: relative;
+    width: 480px;
+    height: 380px;
+    background-color: #cccccc; 
+    border: 1px solid #444;
+    flex-shrink: 0;
+}
+.mini-axis-x { position: absolute; width: 100%; height: 1px; background-color: #555; top: 50%; left: 0; }
+.mini-axis-y { position: absolute; width: 1px; height: 100%; background-color: #555; left: 50%; top: 0; }
+
+.mini-label { position: absolute; font-size: 0.8rem; color: #222; font-weight: 700; }
+.ml-top { top: -25px; left: 50%; transform: translateX(-50%); }
+.ml-bottom { bottom: -25px; left: 50%; transform: translateX(-50%); }
+.ml-left { left: -45px; top: 50%; transform: translateY(-50%); }
+.ml-right { right: -45px; top: 50%; transform: translateY(-50%); }
+
+.mini-ellipse {
+    position: absolute;
+    border: 1px solid #555;
+    border-radius: 50%;
+    background-color: #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mini-ellipse span { font-size: 0.65rem; color: #444; text-align: center; white-space: nowrap; font-weight: 500; }
+
+
+.mini-ellipse.active-target {
+    background-color: #ffffff !important;
+    border-color: #000;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+.mini-ellipse.active-target span { color: #000; font-weight: 700; }
+
+
+.m-casual { width: 45px; height: 110px; left: 3%; top: 28%; }
+.m-richfeminine { width: 40px; height: 100px; left: 19%; top: 38%; }
+.m-orientalelegant { width: 50px; height: 120px; left: 36%; top: 40%; }
+.m-retronatural { width: 55px; height: 130px; left: 51%; top: 13%; }
+.m-genderressmoden { width: 45px; height: 110px; left: 56%; top: 56%; }
+.m-formal { width: 38px; height: 100px; left: 66%; top: 58%; }
+.m-chicmoden { width: 45px; height: 110px; left: 76%; top: 60%; }
+.m-softformal { width: 50px; height: 110px; left: 76%; top: 21%; }
+
+
+
+@media screen and (max-width: 1024px) {
+    .detail-container {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+        overflow-y: auto;
+    }
+    .left-content-zone { width: 100%; height: auto; align-items: center; text-align: center; }
+    .lookbook-gallery { justify-content: center; padding-left: 0; }
+    .lookbook-gallery img { height: 240px; margin-left: -40px; }
+    .right-map-zone { width: 100%; padding: 20px 0; }
+}
